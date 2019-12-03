@@ -1,6 +1,6 @@
 
 const getLocations = async () => {
-  let response = await fetch('https://restpoint-back.herokuapp.com/locations/')
+  let response = await fetch('https://restpoint-back.herokuapp.com/restpoint/locations/')
   let data = await response.json()
   return data
 }
