@@ -31,7 +31,8 @@ const Map = ({ userLocation }) => {
   )
 
   return (
-    <>Map
+    <>
+          <div class="userlocation">
           <ReactMapGL
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoibWFydW1hcnVtYXJ1IiwiYSI6ImNrMzRub25mbDA5eWkzanJ6MXp4dHF4NDEifQ.UXXViE_mVUSwBI9zDfJ8fQ"
@@ -53,6 +54,7 @@ const Map = ({ userLocation }) => {
         </Marker>}
 
       </ReactMapGL>
+      </div>
     </>
   )
 }
