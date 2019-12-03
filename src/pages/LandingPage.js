@@ -10,7 +10,7 @@ const LandingPage = ({userLocation}) => {
   const getRestrooms = async () => {
     let locations = await mapAPI.getLocations()
     console.log(locations)
-    setRestrooms(5)
+    setRestrooms(locations)
   }
 
   useEffect(
