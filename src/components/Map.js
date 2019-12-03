@@ -35,7 +35,7 @@ const Map = ({ userLocation, restrooms }) => {
           <ReactMapGL
         {...viewport}
         mapboxApiAccessToken="pk.eyJ1IjoibWFydW1hcnVtYXJ1IiwiYSI6ImNrMzRub25mbDA5eWkzanJ6MXp4dHF4NDEifQ.UXXViE_mVUSwBI9zDfJ8fQ"
-        mapStyle="mapbox://styles/marumarumaru/ck34ppm5u4wtq1cmmnowi394f"
+        mapStyle="mapbox://styles/marumarumaru/ck3892e4o219o1cpb52p873w5"
         onViewportChange={viewport => {
           setViewport(viewport)
         }}
