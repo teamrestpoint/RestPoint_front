@@ -9,7 +9,7 @@ const pinStyle = {
 }
 export default class UserPin extends PureComponent {
   render() {
-    const {size = 30} = this.props;
+    const size = 40
     return (
       <svg 
         height={size}
@@ -18,6 +18,6 @@ export default class UserPin extends PureComponent {
       >
         <path d={ICON}/>
       </svg>
-    );
+    )
   }
 }

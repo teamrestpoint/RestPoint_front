@@ -15,10 +15,17 @@ const Map = ({ userLocation, restrooms }) => {
     longitude: -87.626,
   })
 
+  const handleClick = (e) => {
+    e.preventDefault()
+    console.log('handling the click')
+  }
+
   const makeToilets = () => {
-    let output = restrooms.map((restroom) => 
+    let output = restrooms.map((restroom) =>
       <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
-        <RestroomPin />
+        <div onclick={() => handleClick()}>
+          <RestroomPin />
+        </div>
       </Marker>
     )
     return output
@@ -50,6 +57,7 @@ const Map = ({ userLocation, restrooms }) => {
             setViewport(viewport)
           }}
         >
+          {restrooms && makeToilets()}
           {userLocation && <Marker
             key={1}
             latitude={parseFloat(userLocation.latitude)}
@@ -61,7 +69,6 @@ const Map = ({ userLocation, restrooms }) => {
               <UserPin />
             </div>
           </Marker>}
-          {restrooms && makeToilets()}
 
         </ReactMapGL>
       </div>

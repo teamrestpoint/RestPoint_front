@@ -18,6 +18,6 @@ export default class RestroomPin extends PureComponent {
       >
         <path d={ICON}/>
       </svg>
-    );
+    )
   }
 }
