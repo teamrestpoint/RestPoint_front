@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
-import CityPin from './CityPin'
+import UserPin from './UserPin'
+import RestroomPin from './RestroomPin'
 
 
 const Map = ({ userLocation, restrooms }) => {
@@ -14,6 +15,15 @@ const Map = ({ userLocation, restrooms }) => {
     longitude: -87.626,
   })
 
+  const makeToilets = () => {
+    let output = restrooms.map((restroom) => 
+      <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
+        <RestroomPin />
+      </Marker>
+    )
+    return output
+
+  }
   useEffect(
     () => {
       if (userLocation && !didUpdate) {
@@ -31,28 +41,29 @@ const Map = ({ userLocation, restrooms }) => {
 
   return (
     <>
-          <div class="userlocation">
-          <ReactMapGL
-        {...viewport}
-        mapboxApiAccessToken="pk.eyJ1IjoibWFydW1hcnVtYXJ1IiwiYSI6ImNrMzRub25mbDA5eWkzanJ6MXp4dHF4NDEifQ.UXXViE_mVUSwBI9zDfJ8fQ"
-        mapStyle="mapbox://styles/marumarumaru/ck3892e4o219o1cpb52p873w5"
-        onViewportChange={viewport => {
-          setViewport(viewport)
-        }}
-      >
-        {userLocation && <Marker
-          key={1}
-          latitude={parseFloat(userLocation.latitude)}
-          longitude={parseFloat(userLocation.longitude)}
+      <div className="userlocation">
+        <ReactMapGL
+          {...viewport}
+          mapboxApiAccessToken="pk.eyJ1IjoibWFydW1hcnVtYXJ1IiwiYSI6ImNrMzRub25mbDA5eWkzanJ6MXp4dHF4NDEifQ.UXXViE_mVUSwBI9zDfJ8fQ"
+          mapStyle="mapbox://styles/marumarumaru/ck3892e4o219o1cpb52p873w5"
+          onViewportChange={viewport => {
+            setViewport(viewport)
+          }}
         >
-          <div
-            className='marker-div'
+          {userLocation && <Marker
+            key={1}
+            latitude={parseFloat(userLocation.latitude)}
+            longitude={parseFloat(userLocation.longitude)}
           >
-            <CityPin />
-          </div>
-        </Marker>}
+            <div
+              className='marker-div'
+            >
+              <UserPin />
+            </div>
+          </Marker>}
+          {restrooms && makeToilets()}
 
-      </ReactMapGL>
+        </ReactMapGL>
       </div>
     </>
   )

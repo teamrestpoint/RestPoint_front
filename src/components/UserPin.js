@@ -7,7 +7,7 @@ const pinStyle = {
   fill: '#b3ddf2',
   stroke: 'black'
 }
-export default class CityPin extends PureComponent {
+export default class UserPin extends PureComponent {
   render() {
     const {size = 30} = this.props;
     return (
