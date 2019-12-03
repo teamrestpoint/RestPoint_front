@@ -5,11 +5,11 @@ const ICON = `M20.2,15.7L20.2,15.7c1.1-1.6,1.8-3.6,1.8-5.7c0-5.6-4.5-10-10-10S2,
 const pinStyle = {
   cursor: 'pointer',
   fill: '#b3ddf2',
-  stroke: 'none'
-};
-export default class CityPin extends PureComponent {
+  stroke: 'black'
+}
+export default class UserPin extends PureComponent {
   render() {
-    const {size = 20} = this.props;
+    const size = 40
     return (
       <svg 
         height={size}
@@ -18,6 +18,6 @@ export default class CityPin extends PureComponent {
       >
         <path d={ICON}/>
       </svg>
-    );
+    )
   }
 }
