@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import CityPin from './CityPin'
 
-const Map = ({ userLocation }) => {
+
+const Map = ({ userLocation, restrooms }) => {
   const [didUpdate, setDidUpdate] = useState(false)
 
   const [viewport, setViewport] = useState({
@@ -24,9 +25,7 @@ const Map = ({ userLocation }) => {
           longitude: userLocation.longitude,
         })
         setDidUpdate(true)
-        console.log('updated')
       }
-      console.log(userLocation)
     }
   )
 
