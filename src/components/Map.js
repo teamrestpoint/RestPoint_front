@@ -16,12 +16,14 @@ const Map = ({ userLocation, restrooms }) => {
   })
 
   const makeToilets = () => {
-    let output = restrooms.map((restroom) => 
-      <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
-        <RestroomPin />
-      </Marker>
-    )
-    return output
+    // let output = restrooms.map((restroom) => 
+    //   <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
+    //     <RestroomPin />
+    //   </Marker>
+    // )
+    // return output
+
+    console.log(restrooms)
 
   }
   useEffect(
