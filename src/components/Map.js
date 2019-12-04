@@ -4,7 +4,7 @@ import UserPin from './UserPin'
 import RestroomPin from './RestroomPin'
 
 
-const Map = ({ userLocation, restrooms }) => {
+const Map = (props, { userLocation, restrooms }) => {
   const [didUpdate, setDidUpdate] = useState(false)
 
   const [viewport, setViewport] = useState({
@@ -17,13 +17,18 @@ const Map = ({ userLocation, restrooms }) => {
 
   const handleClick = (e) => {
     e.preventDefault()
+    const restroom = restrooms[e.target.id]
+    props.history.push({
+      pathname: '/details', 
+      state: restroom
+    })
     console.log('handling the click')
   }
 
   const makeToilets = () => {
-    let output = restrooms.map((restroom) =>
+    let output = restrooms.map((restroom, index) =>
       <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
-        <div onclick={() => handleClick()}>
+        <div id={index} onclick={() => handleClick()}>
           <RestroomPin />
         </div>
       </Marker>
