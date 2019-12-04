@@ -4,7 +4,7 @@ import ReviewScroll from '../components/ReviewScroll'
 import getReviews from '../api/reviewAPI'
 
 const DetailsPage = () => {
-    console.log(getReviews)
+    console.log(getReviews())
     return (
     <div>
         <h1>DetailsPage!</h1>
