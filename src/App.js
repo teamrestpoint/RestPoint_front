@@ -36,14 +36,14 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-          <div>
-            {/* <TitleBar/> */}
-            <hr />
-            <Route exact path="/" render={<LandingPage userLocation={userLocation}/>} />
-            <Route exact path="/details" render={<DetailsPage/>} />
-            <Route exact path="/review" render={<ReviewPage/>} />
-          </div>
-        </BrowserRouter>
+        <div>
+          {/* <TitleBar/> */}
+          <hr />
+          <Route exact path="/" render={(props) => <LandingPage {...props} userLocation={userLocation}/>} />
+          <Route exact path="/details" render={(props) => <DetailsPage {...props}/>} />
+          <Route exact path="/review" render={(props) => <ReviewPage {...props}/>} />
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
