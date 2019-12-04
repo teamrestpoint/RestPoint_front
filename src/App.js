@@ -1,9 +1,11 @@
 import React, { useState, useEffect }from 'react';
 import './App.css';
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import LandingPage from './pages/LandingPage'
-
+import DetailsPage from './pages/DetailsPage'
+import ReviewPage from './pages/ReviewPage'
 
 function App() {
   const [userLocation, setUserLocation] = useState(null)
@@ -33,8 +35,15 @@ function App() {
 
   return (
     <div className="App">
-      <LandingPage userLocation={userLocation}/>
-
+      <BrowserRouter>
+        <div>
+          {/* <TitleBar/> */}
+          <hr />
+          <Route exact path="/" render={(props) => <LandingPage {...props} userLocation={userLocation}/>} />
+          <Route exact path="/details" render={(props) => <DetailsPage {...props}/>} />
+          <Route exact path="/review" render={(props) => <ReviewPage {...props}/>} />
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
