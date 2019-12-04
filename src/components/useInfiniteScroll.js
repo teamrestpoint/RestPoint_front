@@ -21,6 +21,6 @@ const useInfiniteScroll = (callback) => {
     }
 
     return [isFetching, setIsFetching]
-};
+}
 
 export default useInfiniteScroll;

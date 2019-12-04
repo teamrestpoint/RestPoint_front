@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import useInfiniteScroll from "./useInfiniteScroll"
+import reviewAPI from '../api/reviewAPI'
 
 const ReviewScroll = () => {
-    const [reviewItems, setReviewItems] = useState(Array.from(Array(30).keys(), n => n + 1))
+    const [reviewItems, setReviewItems] = useState(reviewAPI.getReviews())
     const [isFetching, setIsFetching] = useInfiniteScroll(fetchMoreReviewItems)
 
     function fetchMoreReviewItems() {
@@ -15,7 +16,7 @@ const ReviewScroll = () => {
     return (
         <>
             <ul className="list-group mb-2">
-                {reviewItems.map(reviewItem => <li className="list-group-item" key={reviewItem}>Review Item {reviewItem}</li>)}
+                {reviewItems.map(reviewItem => <li className="list-group-item" key={reviewItem.id}>Review Item {reviewItem}</li>)}
             </ul>
             {isFetching && 'Fetching more reviews...'}
         </>
