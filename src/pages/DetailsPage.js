@@ -1,4 +1,5 @@
 import React from 'react'
+import ReviewScroll from '../components/ReviewScroll'
 
 export default function DetailsPage(props) {
     const restroom = props.location.state
@@ -20,8 +21,13 @@ export default function DetailsPage(props) {
                     <p>Gender Neutral: {restroom.is_gender_neutral}</p>
                     <p>Stall Count: {restroom.number_of_stalls}</p>
                     <p>Family Bathroom: {restroom.is_family_bathroom}</p>
-                </div>    
+                </div>
+                <div>
+                    <ReviewScroll />
+                </div>
             </div>
         </div>
     )
 }
+
+export default DetailsPage
