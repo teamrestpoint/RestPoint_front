@@ -29,5 +29,3 @@ export default function DetailsPage(props) {
         </div>
     )
 }
-
-export default DetailsPage
