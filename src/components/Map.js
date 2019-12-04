@@ -17,18 +17,18 @@ const Map = (props, { userLocation, restrooms }) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    const restroom = restrooms[e.target.id]
-    props.history.push({
-      pathname: '/details', 
-      state: restroom
-    })
+    // const restroom = restrooms[e.target.id]
+    // props.history.push({
+    //   pathname: '/details', 
+    //   state: restroom
+    // })
     console.log('handling the click')
   }
 
   const makeToilets = () => {
     let output = restrooms.map((restroom, index) =>
       <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
-        <div id={index} onClick={() => handleClick()}>
+        <div id={index} onClick={(e) => handleClick(e)}>
           <RestroomPin />
         </div>
       </Marker>
