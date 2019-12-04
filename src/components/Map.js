@@ -64,7 +64,7 @@ const Map = (props, { userLocation, restrooms }) => {
         >
           {restrooms && makeToilets()}
           {userLocation && <Marker
-            key={1}
+            key={'userLocation'}
             latitude={parseFloat(userLocation.latitude)}
             longitude={parseFloat(userLocation.longitude)}
           >
