@@ -4,7 +4,8 @@ import UserPin from './UserPin'
 import RestroomPin from './RestroomPin'
 
 
-const Map = (props ,{ history, userLocation, restrooms }) => {
+const Map = (props) => {
+  const { history, userLocation, restrooms } = props
   const [didUpdate, setDidUpdate] = useState(false)
 
   const [viewport, setViewport] = useState({
