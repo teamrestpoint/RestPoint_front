@@ -3,7 +3,9 @@ import { Form, Button } from 'react-bootstrap'
 import { Redirect } from 'react-router'
 import ReviewAPI from '../api/ReviewAPI'
 
-const ReviewPage = (_props, { restroomID }) => {
+const ReviewPage = (props) => {
+  const restroom = props.location.state
+  const [redirect, setRedirect] = useState(false)
 
   const getRandInt = (max) => {
     return Math.floor(Math.random() * Math.floor(max))
@@ -16,9 +18,8 @@ const ReviewPage = (_props, { restroomID }) => {
     const is_accurate = e.target.accurate.checked
     console.log(e.target.accurate.checked)
 
-
     const reviewData = {
-      location: restroomID ? restroomID : getRandInt(5) + 1,
+      location: restroom ? restroom.id : getRandInt(5) + 1,
       rating: rating,
       review_text: review_text,
       is_accurate: is_accurate,
@@ -26,10 +27,21 @@ const ReviewPage = (_props, { restroomID }) => {
 
     console.log(reviewData)
 
+    let response = await ReviewAPI.uploadReview(reviewData)
+    if (response) {
+      setRedirect(true)
+    }
+
   }
 
   return (
     <>
+    {redirect && <Redirect to={{
+        pathname: '/details', 
+        state: restroom
+      }} />
+    }
+  }}
       <h2>Give a rating for {/* Fill in props for site name here */}</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
 

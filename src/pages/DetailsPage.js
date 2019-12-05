@@ -1,10 +1,8 @@
 import React from 'react'
 import Reviews from '../components/Reviews'
-import ReviewScroll from '../components/ReviewScroll'
 
 export default function DetailsPage(props) {
     const restroom = props.location.state
-
 
     return (
         <div class="main">
@@ -24,8 +22,7 @@ export default function DetailsPage(props) {
                     <p>Family Bathroom: {restroom.is_family_bathroom}</p>
                 </div>
                 <div>
-                    {/* <ReviewScroll /> */}
-                    <Reviews />
+                    <Reviews restroom={restroom}/>
                 </div>
             </div>
         </div>
