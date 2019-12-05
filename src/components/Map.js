@@ -17,7 +17,8 @@ const Map = ({ userLocation, restrooms }) => {
 
   const handleClick = (e) => {
     e.preventDefault()
-    console.log('handling the click')
+    console.log(e.target.id)
+    console.log(restrooms[e.target.id])
   }
 
   const makeToilets = () => {
