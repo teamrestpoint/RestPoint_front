@@ -1,6 +1,7 @@
 import React, {useState, useEffect}from 'react'
 import Map from '../components/Map'
 import '../App.css'
+import Filters from '../components/Filters'
 
 import mapAPI from '../api/mapAPI'
 
@@ -24,6 +25,7 @@ const LandingPage = ({userLocation}) => {
   return (
     <>
     <Map userLocation={userLocation} restrooms={restrooms} />
+    <Filters />
     </>
   )
 } 
