@@ -8,7 +8,7 @@ export default function DetailsPage(props) {
         <div class="main">
             <h1>RestPoint: {restroom.location_name} {restroom.id}</h1>
             <div class="secondary">
-                <img src="{image_url}" alt="{restroom.location_name}" height="250" width="250" />
+                <img src={restroom.image_url} alt={restroom.location_name} height="250" width="250" />
                 <div class="details">
                     <p>Location: {restroom.location_name}</p>
                     <p>Address: {restroom.address}</p>
