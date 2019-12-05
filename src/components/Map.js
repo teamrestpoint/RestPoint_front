@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import UserPin from './UserPin'
 import RestroomPin from './RestroomPin'
-import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+
 
 
 const Map = (props) => {
@@ -30,7 +31,7 @@ const Map = (props) => {
 
   const renderRedirect = () => {
     if (redirect) {
-      return <Redirect to={{
+      return <Link to={{
         pathname: '/details',
         state: restroom
       }} />
