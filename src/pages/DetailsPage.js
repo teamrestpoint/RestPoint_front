@@ -23,7 +23,7 @@ export default function DetailsPage(props) {
                     <p>Family Bathroom: {restroom.is_family_bathroom}</p>
                 </div>
                 <div>
-                    <ReviewScroll />
+                    {/* <ReviewScroll /> */}
                 </div>
             </div>
         </div>
