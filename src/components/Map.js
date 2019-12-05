@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import UserPin from './UserPin'
 import RestroomPin from './RestroomPin'
+import { Redirect } from 'react-router-dom'
 
 
 const Map = (props) => {
-  const { history, userLocation, restrooms } = props
+  const { userLocation, restrooms } = props
   const [didUpdate, setDidUpdate] = useState(false)
+  const [redirect, setRedirect] = useState(false)
+  const [restroom, setRestroom] = useState([])
 
   const [viewport, setViewport] = useState({
     width: "50vw",
@@ -20,12 +23,17 @@ const Map = (props) => {
     console.log(index)
     const restroom = restrooms[index]
     console.log(restroom)
-    console.log(history)
-    console.log(props.history)
-    // history.push({
-    //   pathname: '/details', 
-    //   state: restroom
-    // })
+    setRestroom(restroom)
+    setRedirect(true)
+  }
+
+  const renderRedirect = () => {
+    if (redirect) {
+      return <Redirect to={{
+        pathname: '/details', 
+        state: restroom
+      }} />
+    }
   }
 
   const makeToilets = () => {
@@ -56,6 +64,7 @@ const Map = (props) => {
 
   return (
     <>
+      {renderRedirect()}
       <div className="userlocation">
         <ReactMapGL
           {...viewport}
