@@ -7,11 +7,12 @@ const Reviews = ({ restroom }) => {
     const [reviewItems, setReviewItems] = useState(null)
 
     const getFilteredReviews = async () => {
-        let allReviews = await reviewAPI.getReviews()
-        // maybe a problem if there are no reviews
-        let reviews = await allReviews.filter((review) => review.location === restroom.id)
-        setReviewItems(reviews)
-
+        if (!reviewItems) {
+            let allReviews = await reviewAPI.getReviews()
+            // maybe a problem if there are no reviews
+            let reviews = await allReviews.filter((review) => review.location === restroom.id)
+            setReviewItems(reviews)
+        }
     }
 
     useEffect(
@@ -31,15 +32,15 @@ const Reviews = ({ restroom }) => {
             }}>
                 Add Review
             </Link>
-                <div>
-                    {reviewItems.map(reviewItem => <li className="list-group-item" key={reviewItem.id}>
-                        <h2>{reviewItem.rating} Stars</h2>
-                        <h4>Posted {reviewItem.created_date}</h4>
-                        <h3>{reviewItem.review_text}</h3>
-                    </li>)}
-                </div>
+            <div>
+                {reviewItems && reviewItems.map(reviewItem => <li className="list-group-item" key={reviewItem.id}>
+                    <h2>{reviewItem.rating} Stars</h2>
+                    <h4>Posted {reviewItem.created_date}</h4>
+                    <h3>{reviewItem.review_text}</h3>
+                </li>)}
+            </div>
         </div>
-            )
-        }
-        
+    )
+}
+
 export default Reviews
