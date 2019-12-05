@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom'
 
 
 const Map = (props) => {
+  const timeout = 15000
   const { userLocation, restrooms } = props
   const [didUpdate, setDidUpdate] = useState(false)
   const [redirect, setRedirect] = useState(false)
@@ -14,7 +15,7 @@ const Map = (props) => {
   const [viewport, setViewport] = useState({
     width: "50vw",
     height: "50vh",
-    zoom: 15,
+    zoom: 13,
     latitude: 41.883,
     longitude: -87.626,
   })
@@ -30,7 +31,7 @@ const Map = (props) => {
   const renderRedirect = () => {
     if (redirect) {
       return <Redirect to={{
-        pathname: '/details', 
+        pathname: '/details',
         state: restroom
       }} />
     }
@@ -50,16 +51,19 @@ const Map = (props) => {
   useEffect(
     () => {
       if (userLocation && !didUpdate) {
-        setViewport({
-          width: "50vw",
-          height: "50vh",
-          zoom: 15,
-          latitude: userLocation.latitude,
-          longitude: userLocation.longitude,
-        })
-        setDidUpdate(true)
+        setTimeout(() => {
+          setViewport({
+            width: "50vw",
+            height: "50vh",
+            zoom: 15,
+            latitude: userLocation.latitude,
+            longitude: userLocation.longitude,
+          })
+          setDidUpdate(true)
+        }, timeout)
       }
     }
+
   )
 
   return (
