@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import reviewAPI from '../api/reviewAPI'
+import reviewAPI from '../api/ReviewAPI'
 
 
 const Reviews = ({ restroom }) => {
