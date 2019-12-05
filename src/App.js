@@ -39,7 +39,6 @@ function App() {
       <BrowserRouter>
         <div>
           <TitleBar />
-          <hr />
           <Route exact path="/" render={(props) => <LandingPage {...props} userLocation={userLocation}/>} />
           <Route exact path="/details" render={(props) => <DetailsPage {...props}/>} />
           <Route exact path="/review" render={(props) => <ReviewPage {...props}/>} />
