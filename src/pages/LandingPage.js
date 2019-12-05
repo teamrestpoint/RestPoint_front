@@ -22,7 +22,7 @@ const LandingPage = ({userLocation}) => {
   )
 
   return (
-    <><h1>RestPoint - Landing Page</h1>
+    <>
     <Map userLocation={userLocation} restrooms={restrooms} />
     </>
   )
