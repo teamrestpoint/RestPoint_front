@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import LandingPage from './pages/LandingPage'
 import DetailsPage from './pages/DetailsPage'
 import ReviewPage from './pages/ReviewPage'
+import TitleBar from './components/TitleBar'
 
 function App() {
   const [userLocation, setUserLocation] = useState(null)
@@ -37,7 +38,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <div>
-          {/* <TitleBar/> */}
+          <TitleBar />
           <hr />
           <Route exact path="/" render={(props) => <LandingPage {...props} userLocation={userLocation}/>} />
           <Route exact path="/details" render={(props) => <DetailsPage {...props}/>} />
