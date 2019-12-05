@@ -22,7 +22,7 @@ const Map = ({ userLocation, restrooms }) => {
   const makeToilets = () => {
     let output = restrooms.map((restroom, index) =>
       <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
-        <div id={index} onClick={() => handleClick({index})}>
+        <div id={index} onClick={() => handleClick(index)}>
           <RestroomPin />
         </div>
       </Marker>
