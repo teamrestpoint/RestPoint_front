@@ -1,4 +1,5 @@
 import React from 'react'
+import Reviews from '../components/Reviews'
 import ReviewScroll from '../components/ReviewScroll'
 
 export default function DetailsPage(props) {
@@ -24,6 +25,7 @@ export default function DetailsPage(props) {
                 </div>
                 <div>
                     {/* <ReviewScroll /> */}
+                    <Reviews />
                 </div>
             </div>
         </div>
