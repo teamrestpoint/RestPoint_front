@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import useInfiniteScroll from "./useInfiniteScroll"
-import reviewAPI from '../api/reviewAPI'
+import reviewAPI from '../api/ReviewAPI'
 
 const ReviewScroll = () => {
     const [reviewItems, setReviewItems] = useState(reviewAPI.getReviews())

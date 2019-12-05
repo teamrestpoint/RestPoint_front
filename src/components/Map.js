@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import UserPin from './UserPin'
 import RestroomPin from './RestroomPin'
+import { Redirect } from 'react-router-dom'
 
 
-const Map = (props, { userLocation, restrooms }) => {
+const Map = (props) => {
+  const { userLocation, restrooms } = props
   const [didUpdate, setDidUpdate] = useState(false)
+  const [redirect, setRedirect] = useState(false)
+  const [restroom, setRestroom] = useState([])
 
   const [viewport, setViewport] = useState({
     width: "50vw",
@@ -15,20 +19,27 @@ const Map = (props, { userLocation, restrooms }) => {
     longitude: -87.626,
   })
 
-  const handleClick = (e) => {
-    e.preventDefault()
-    const restroom = restrooms[e.target.id]
-    props.history.push({
-      pathname: '/details', 
-      state: restroom
-    })
-    console.log('handling the click')
+  const handleClick = (index) => {
+    console.log(index)
+    const restroom = restrooms[index]
+    console.log(restroom)
+    setRestroom(restroom)
+    setRedirect(true)
+  }
+
+  const renderRedirect = () => {
+    if (redirect) {
+      return <Redirect to={{
+        pathname: '/details', 
+        state: restroom
+      }} />
+    }
   }
 
   const makeToilets = () => {
     let output = restrooms.map((restroom, index) =>
       <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
-        <div id={index} onclick={() => handleClick()}>
+        <div id={index} onClick={() => handleClick(index)}>
           <RestroomPin />
         </div>
       </Marker>
@@ -53,6 +64,7 @@ const Map = (props, { userLocation, restrooms }) => {
 
   return (
     <>
+      {renderRedirect()}
       <div className="userlocation">
         <ReactMapGL
           {...viewport}
@@ -64,7 +76,7 @@ const Map = (props, { userLocation, restrooms }) => {
         >
           {restrooms && makeToilets()}
           {userLocation && <Marker
-            key={1}
+            key={'user'}
             latitude={parseFloat(userLocation.latitude)}
             longitude={parseFloat(userLocation.longitude)}
           >

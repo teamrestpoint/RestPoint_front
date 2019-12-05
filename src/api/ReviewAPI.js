@@ -1,10 +1,8 @@
-
-
-
-
-
-
-
+const getReviews = async () => {
+  let response = await fetch('https://restpoint-back.herokuapp.com/restpoint/reviews/')
+  let data = await response.json()
+  return data
+}
 
 const uploadReview = async (reviewData) => {
   let response = await fetch('https://restpoint-back.herokuapp.com/restpoint/reviews/', {
@@ -19,5 +17,6 @@ const uploadReview = async (reviewData) => {
 } 
 
 export default {
+  getReviews: getReviews,
   uploadReview: uploadReview,
 }
