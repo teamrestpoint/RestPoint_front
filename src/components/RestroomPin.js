@@ -9,7 +9,7 @@ const pinStyle = {
 }
 export default class RestroomPin extends PureComponent {
   render() {
-    const size = 40
+    const size = 20
     return (
       <svg 
         height={size}
