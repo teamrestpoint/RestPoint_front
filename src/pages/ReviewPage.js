@@ -7,10 +7,6 @@ const ReviewPage = (props) => {
   const restroom = props.location.state
   const [redirect, setRedirect] = useState(false)
 
-  const getRandInt = (max) => {
-    return Math.floor(Math.random() * Math.floor(max))
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault()
     const rating = e.target.rating.value
@@ -19,7 +15,7 @@ const ReviewPage = (props) => {
     console.log(e.target.accurate.checked)
 
     const reviewData = {
-      location: restroom ? restroom.id : getRandInt(5) + 1,
+      location: restroom.id,
       rating: rating,
       review_text: review_text,
       is_accurate: is_accurate,
