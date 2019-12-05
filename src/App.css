@@ -30,6 +30,10 @@
   justify-content: center;
 }
 
+.svgLogo {
+  text-align: center;
+}
+
 .star-rating__stars {
   position: relative;
   height: 5rem;
