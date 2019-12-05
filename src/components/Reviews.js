@@ -7,9 +7,9 @@ const Reviews = ({ restroom }) => {
     const [reviewItems, setReviewItems] = useState(null)
 
     const getFilteredReviews = async () => {
-        allReviews = await reviewAPI.getReviews()
+        let allReviews = await reviewAPI.getReviews()
         // maybe a problem if there are no reviews
-        reviews = await allReviews.filter((review) => review.location === restroom.id)
+        let reviews = await allReviews.filter((review) => review.location === restroom.id)
         setReviewItems(reviews)
 
     }
