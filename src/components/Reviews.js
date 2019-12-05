@@ -9,9 +9,9 @@ const Reviews = ({ restroom }) => {
     const getFilteredReviews = async () => {
         if (!reviewItems) {
             let allReviews = await reviewAPI.getReviews()
-            // maybe a problem if there are no reviews
             let reviews = await allReviews.filter((review) => review.location === restroom.id)
-            setReviewItems(reviews)
+            let sortedReviews = reviews.reverse()
+            setReviewItems(sortedReviews)
         }
     }
 
