@@ -4,7 +4,6 @@ import Reviews from '../components/Reviews'
 export default function DetailsPage(props) {
     const restroom = props.location.state
 
-
     return (
         <div class="main">
             <h1>RestPoint: {restroom.location_name} {restroom.id}</h1>
