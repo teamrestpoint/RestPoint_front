@@ -54,9 +54,6 @@ const ReviewPage = (props) => {
           </div>
         </fieldset>
 
-
-
-
         <Form.Group controlId="review">
           <div className="enter-a-review">
             <Form.Label>Enter a Review:</Form.Label>

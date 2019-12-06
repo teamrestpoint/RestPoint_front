@@ -12,13 +12,11 @@ function App() {
   const [userLocation, setUserLocation] = useState(null)
 
   const fetchUserLocation = () => {
-
     var geo_options = {
       enableHighAccuracy: true,
       maximumAge: 30000,
       timeout: 50000
     }
-
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -32,7 +30,7 @@ function App() {
       fetchUserLocation()
     }
   }
-  )
+)
 
   return (
     <div className="App">
