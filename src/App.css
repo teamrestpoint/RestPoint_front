@@ -113,7 +113,6 @@
 }
 
 .star-rating {
-  margin-left: auto;
+  margin-left: 40%;
   margin-right: auto;
-  width: 20em
 }
