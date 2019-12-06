@@ -40,8 +40,7 @@ const ReviewPage = (props) => {
       <Form onSubmit={(e) => handleSubmit(e)}>
         <h3 className="rating">Your rating:</h3>
 
-        <fieldset className="star-rating">
-          <legend className="star-rating__title"></legend>
+        <div className="star-rating">
           <div className="star-rating__stars">
             <input className="star-rating__input" type="radio" name="rating" value="1" id="rating-1" />
             <label className="star-rating__label" for="rating-1" aria-label="One"></label>
@@ -52,7 +51,7 @@ const ReviewPage = (props) => {
             <input className="star-rating__input" type="radio" name="rating" value="4" id="rating-4" />
             <label className="star-rating__label" for="rating-4" aria-label="Four"></label>
           </div>
-        </fieldset>
+        </div>
 
         <Form.Group controlId="review">
           <div className="enter-a-review">
