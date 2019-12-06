@@ -37,7 +37,7 @@ const ReviewPage = (props) => {
         state: restroom
       }} />
     }
-      <h2>Give a rating for:</h2>
+      <h2>Give a rating for {restroom.location_name}:</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
 
         <fieldset className="star-rating">
