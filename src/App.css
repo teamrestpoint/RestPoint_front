@@ -95,3 +95,24 @@
   left: -.25em;
   outline: 0.25rem solid lightblue;
 }
+
+.review-submit {
+  text-align: center;
+}
+
+.is_accurate {
+  text-align: center;
+}
+
+.enter-a-review {
+  text-align: center;
+}
+
+.rating {
+  text-align: center;
+}
+
+.star-rating {
+  margin: auto;
+  width: 20%;
+}

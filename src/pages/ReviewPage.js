@@ -37,11 +37,12 @@ const ReviewPage = (props) => {
         state: restroom
       }} />
     }
-      <h2>Give a rating for {restroom.location_name}:</h2>
+      <h2 align="center">Give a rating for {restroom.location_name}:</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
+      <h3 className="rating">Your rating:</h3>
 
         <fieldset className="star-rating">
-          <legend className="star-rating__title">Your rating:</legend>
+          <legend className="star-rating__title"></legend>
           <div className="star-rating__stars">
             <input className="star-rating__input" type="radio" name="rating" value="1" id="rating-1" />
             <label className="star-rating__label" for="rating-1" aria-label="One"></label>
@@ -53,25 +54,30 @@ const ReviewPage = (props) => {
             <label className="star-rating__label" for="rating-4" aria-label="Four"></label>
           </div>
         </fieldset>
+        
 
 
 
         <Form.Group controlId="review">
+          <div className="enter-a-review">
           <Form.Label>Enter a Review:</Form.Label>
           <p/>
+          </div>
           <Form.Control as="textarea" rows="4" cols="100"/>
         </Form.Group>
 
-        <Form.Group controlId="is_accurate">
+        <Form.Group controlId="is_accurate" className="is_accurate">
           <Form.Check type="checkbox" label="Posted restroom description was accurate*" name="accurate" defaultChecked />
         </Form.Group>
 
+        <div className="review-submit">
         <Button variant="primary" type="submit">
           Submit Review
           </Button>
+        </div>
       </Form>
       <p></p>
-      <p>* If data is inaccurate, please include this information in your review.</p>
+      <p align="center">* If data is inaccurate, please include this information in your review.</p>
     </>
   )
 
