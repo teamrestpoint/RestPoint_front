@@ -14,7 +14,7 @@ const uploadReview = async (reviewData) => {
   })
   let data = await response.json()
   return data
-} 
+}
 
 export default {
   getReviews: getReviews,

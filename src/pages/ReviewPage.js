@@ -32,14 +32,14 @@ const ReviewPage = (props) => {
 
   return (
     <>
-    {redirect && <Redirect to={{
-        pathname: '/details', 
+      {redirect && <Redirect to={{
+        pathname: '/details',
         state: restroom
       }} />
-    }
+      }
       <h2 align="center">Give a rating for {restroom.location_name}:</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
-      <h3 className="rating">Your rating:</h3>
+        <h3 className="rating">Your rating:</h3>
 
         <fieldset className="star-rating">
           <legend className="star-rating__title"></legend>
@@ -54,16 +54,16 @@ const ReviewPage = (props) => {
             <label className="star-rating__label" for="rating-4" aria-label="Four"></label>
           </div>
         </fieldset>
-        
+
 
 
 
         <Form.Group controlId="review">
           <div className="enter-a-review">
-          <Form.Label>Enter a Review:</Form.Label>
-          <p/>
+            <Form.Label>Enter a Review:</Form.Label>
+            <p />
           </div>
-          <Form.Control as="textarea" rows="4" cols="100"/>
+          <Form.Control as="textarea" rows="4" cols="100" />
         </Form.Group>
 
         <Form.Group controlId="is_accurate" className="is_accurate">
@@ -71,8 +71,8 @@ const ReviewPage = (props) => {
         </Form.Group>
 
         <div className="review-submit">
-        <Button variant="primary" type="submit">
-          Submit Review
+          <Button variant="primary" type="submit">
+            Submit Review
           </Button>
         </div>
       </Form>
@@ -80,7 +80,6 @@ const ReviewPage = (props) => {
       <p align="center">* If data is inaccurate, please include this information in your review.</p>
     </>
   )
-
 }
 
 export default ReviewPage

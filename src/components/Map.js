@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import UserPin from './UserPin'
 import RestroomPin from './RestroomPin'
-import { Redirect, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Map = (props) => {
   const timeout = 15000
   const { userLocation, restrooms } = props
   const [didUpdate, setDidUpdate] = useState(false)
-  const [restroom, setRestroom] = useState([])
 
   const [viewport, setViewport] = useState({
     width: "50vw",
