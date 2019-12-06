@@ -33,8 +33,8 @@ const Map = (props) => {
       </Marker>
     )
     return output
-
   }
+
   useEffect(
     () => {
       if (userLocation && !didUpdate) {
@@ -50,7 +50,6 @@ const Map = (props) => {
         }, timeout)
       }
     }
-
   )
 
   return (

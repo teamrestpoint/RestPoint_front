@@ -27,5 +27,4 @@ const LandingPage = ({ userLocation }) => {
   )
 }
 
-
 export default LandingPage
