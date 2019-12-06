@@ -37,11 +37,9 @@ const ReviewPage = (props) => {
         state: restroom
       }} />
     }
-  }}
-      <h2>Give a rating for {/* Fill in props for site name here */}</h2>
+      <h2>Give a rating for {restroom.location_name}:</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
 
-        {/* This spot is for the 4 star Rating Component */}
         <fieldset className="star-rating">
           <legend className="star-rating__title">Your rating:</legend>
           <div className="star-rating__stars">
@@ -59,7 +57,7 @@ const ReviewPage = (props) => {
 
 
         <Form.Group controlId="review">
-          <Form.Label>Enter a Review</Form.Label>
+          <Form.Label>Enter a Review:</Form.Label>
           <p/>
           <Form.Control as="textarea" rows="4" cols="100"/>
         </Form.Group>
@@ -69,11 +67,11 @@ const ReviewPage = (props) => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Submit
+          Submit Review
           </Button>
       </Form>
-
-      <p>* If inaccurate info, please include in review</p>
+      <p></p>
+      <p>* If data is inaccurate, please include this information in your review.</p>
     </>
   )
 
