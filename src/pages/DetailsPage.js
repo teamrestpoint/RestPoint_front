@@ -1,21 +1,21 @@
 import React from 'react'
 import Reviews from '../components/Reviews'
+import star from '../chicago_star.svg'
 
 export default function DetailsPage(props) {
     const restroom = props.location.state
 
     return (
         <div className="main">
-            <h1>Your RestPoint: {restroom.location_name}</h1>
+            <h1>{restroom.location_name}</h1>
             <div className="secondary">
                 <img src={restroom.image_url} alt={restroom.location_name} height="250" width="250" />
                 <div className="details">
-                    <p>{restroom.location_name}</p>
                     <p>{restroom.address}</p>
-                    {restroom.avg_rating && <p>Average Rating: {restroom.avg_rating}</p>}
+                    {restroom.avg_reviews && <p>Average Rating: {restroom.avg_reviews} <img src={star} alt="star" height="42" width="42" /> </p>}
                     {restroom.description && <p>Description: {restroom.description}</p>}
                 </div>
-                <h1>Amenities</h1>
+                <hr />
                 <div className="attributes">
                     {restroom.has_changing_table && <p>Changing Table</p>}
                     {restroom.is_accessible && <p>Accessible</p>}
