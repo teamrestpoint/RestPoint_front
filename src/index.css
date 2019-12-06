@@ -1,8 +1,6 @@
-@import url(https://fonts.googleapis.com/css?family=Song+Myung);
-
 body {
   margin: 0;
-  font-family: 'Song Myung';
+  font-family: 'Song Myung', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

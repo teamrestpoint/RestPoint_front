@@ -34,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+      <link href="https://fonts.googleapis.com/css?family=Song+Myung" rel="stylesheet"></link>
       <BrowserRouter>
         <div>
           <TitleBar />
