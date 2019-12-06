@@ -2,14 +2,13 @@ import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker } from 'react-map-gl'
 import UserPin from './UserPin'
 import RestroomPin from './RestroomPin'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 
 
 const Map = (props) => {
   const timeout = 15000
   const { userLocation, restrooms } = props
   const [didUpdate, setDidUpdate] = useState(false)
-  const [redirect, setRedirect] = useState(false)
   const [restroom, setRestroom] = useState([])
 
   const [viewport, setViewport] = useState({
@@ -20,28 +19,17 @@ const Map = (props) => {
     longitude: -87.626,
   })
 
-  const handleClick = (index) => {
-    console.log(index)
-    const restroom = restrooms[index]
-    console.log(restroom)
-    setRestroom(restroom)
-    setRedirect(true)
-  }
-
-  const renderRedirect = () => {
-    if (redirect) {
-      return <Redirect to={{
-        pathname: '/details',
-        state: restroom
-      }} />
-    }
-  }
-
   const makeToilets = () => {
     let output = restrooms.map((restroom, index) =>
       <Marker key={restroom.id} latitude={parseFloat(restroom.lat)} longitude={parseFloat(restroom.long)} >
-        <div id={index} onClick={() => handleClick(index)}>
-          <RestroomPin />
+        <div id={index}>
+          <Link to={{
+            pathname: '/details',
+            state: restrooms[index]
+          }}
+          >
+            <RestroomPin />
+          </Link>
         </div>
       </Marker>
     )
@@ -68,7 +56,6 @@ const Map = (props) => {
 
   return (
     <>
-      {renderRedirect()}
       <div className="userlocation">
         <ReactMapGL
           {...viewport}
