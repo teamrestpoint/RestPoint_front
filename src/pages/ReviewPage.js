@@ -12,16 +12,13 @@ const ReviewPage = (props) => {
     const rating = e.target.rating.value
     const review_text = e.target.review.value
     const is_accurate = e.target.accurate.checked
-    console.log(e.target.accurate.checked)
-
+    
     const reviewData = {
       location: restroom.id,
       rating: rating,
       review_text: review_text,
       is_accurate: is_accurate,
     }
-
-    console.log(reviewData)
 
     let response = await ReviewAPI.uploadReview(reviewData)
     if (response) {
