@@ -84,7 +84,7 @@
 }
 
 .star-rating__input:focus ~ .star-rating__focus {
-  position: absolute;
+  position: relative;
   top: -.25em;
   right: -.25em;
   bottom: -.25em;
@@ -108,4 +108,7 @@
   text-align: center;
 }
 
-
+.star-rating__stars {
+  margin-left: auto;
+  margin-right: auto;
+}
