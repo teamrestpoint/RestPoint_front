@@ -4,7 +4,9 @@
 	 viewBox="0 0 170 80" style="enable-background:new 0 0 170 80;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#B4DDF1;}
-	.st1{font-family:'Avenir-Black';}
+	.st1{font-family: 'Nunito', sans-serif;
+			 src: url(https://fonts.googleapis.com/css?family=Nunito:900);
+	}
 	.st2{font-size:38.1391px;}
 	.st3{fill:#EE2237;}
 	.st4{fill:#ED2224;}
@@ -21,5 +23,5 @@
 	81.6,40.5 89.4,42.8 "/>
 <polygon class="st4" points="113.6,34.3 115.7,42.8 123.6,40.5 117.8,46.8 123.6,53 115.7,50.8 113.6,59.3 111.4,50.8 103.6,53 
 	109.3,46.8 103.6,40.5 111.4,42.8 "/>
-<text transform="matrix(0.9179 0 0 1 10.308 71.7029)"><tspan x="0" y="0" class="st1 st5">Go your own wa</tspan><tspan x="148.9" y="0" class="st1 st5 st6">y</tspan><tspan x="157.8" y="0" class="st1 st5">.</tspan></text>
+<text transform="matrix(0.9179 0 0 1 10.308 71.7029)"><tspan x="0" y="0" class="st1 st5">Go your own way.</tspan></text>
 </svg>
