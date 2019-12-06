@@ -12,7 +12,7 @@ const Map = (props) => {
 
   const [viewport, setViewport] = useState({
     width: "80vw",
-    height: "70vh",
+    height: "65vh",
     zoom: 13,
     latitude: 41.883,
     longitude: -87.626,
@@ -41,7 +41,7 @@ const Map = (props) => {
         setTimeout(() => {
           setViewport({
             width: "80vw",
-            height: "70vh",
+            height: "65vh",
             zoom: 15,
             latitude: userLocation.latitude,
             longitude: userLocation.longitude,
