@@ -1,5 +1,5 @@
-import React, { useState, useEffect }from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import './App.css'
 import 'mapbox-gl/dist/mapbox-gl.css'
 import { BrowserRouter, Route } from 'react-router-dom'
 
@@ -14,16 +14,16 @@ function App() {
   const fetchUserLocation = () => {
 
     var geo_options = {
-      enableHighAccuracy: true, 
-      maximumAge        : 30000, 
-      timeout           : 50000
-    };
-    
+      enableHighAccuracy: true,
+      maximumAge: 30000,
+      timeout: 50000
+    }
+
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
         setUserLocation(position.coords)
-      }, () => {console.log('fail')}, geo_options
+      }, () => { console.log('fail') }, geo_options
     )
   }
 
@@ -39,13 +39,13 @@ function App() {
       <BrowserRouter>
         <div>
           <TitleBar />
-          <Route exact path="/" render={(props) => <LandingPage {...props} userLocation={userLocation}/>} />
-          <Route exact path="/details" render={(props) => <DetailsPage {...props}/>} />
-          <Route exact path="/review" render={(props) => <ReviewPage {...props}/>} />
+          <Route exact path="/" render={(props) => <LandingPage {...props} userLocation={userLocation} />} />
+          <Route exact path="/details" render={(props) => <DetailsPage {...props} />} />
+          <Route exact path="/review" render={(props) => <ReviewPage {...props} />} />
         </div>
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -6,7 +6,7 @@ const TitleBar = () => {
     return (
         <div>
             <nav className="svgLogo">
-            <h1 key={'home'}><Link to='/'><img src={logo} alt="logo" height="150px" /></Link></h1>
+                <h1 key={'home'}><Link to='/'><img src={logo} alt="logo" height="150px" /></Link></h1>
             </nav>
         </div>
     )

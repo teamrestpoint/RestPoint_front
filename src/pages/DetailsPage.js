@@ -22,7 +22,7 @@ export default function DetailsPage(props) {
                     <p>Family Bathroom: {restroom.is_family_bathroom.toString()}</p>
                 </div>
                 <div>
-                    <Reviews restroom={restroom}/>
+                    <Reviews restroom={restroom} />
                 </div>
             </div>
         </div>
