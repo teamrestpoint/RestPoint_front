@@ -12,7 +12,6 @@ export default function DetailsPage(props) {
       let newRoom = await locationAPI.getLocationByID(restroom.id)
       setRestroom(newRoom)
     }
-
   }
 
   useEffect(
