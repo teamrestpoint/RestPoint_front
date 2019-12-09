@@ -12,7 +12,7 @@ const ReviewPage = (props) => {
     const rating = e.target.rating.value
     const review_text = e.target.review.value
     const is_accurate = e.target.accurate.checked
-    
+
     const reviewData = {
       location: restroom.id,
       rating: rating,

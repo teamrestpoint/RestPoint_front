@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../logoassvg.svg'
 
- const TitleBar = () => {
+const TitleBar = () => {
     return (
         <div>
             <nav className="svgLogo">
