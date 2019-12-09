@@ -47,12 +47,15 @@ const Reviews = ({ restroom }) => {
                 Add Review
             </Link>
             <div>
-                {reviewItems && reviewItems.map(reviewItem => <li className="list-group-item" key={reviewItem.id}>
-                    <h2>{parseStars(reviewItem.rating)}</h2>
-                    <h4>Posted {parseDate(reviewItem.created_date)}</h4>
+                {reviewItems && reviewItems.map(reviewItem => 
+                    <div className="reviews">
+                    <h2 className="review-stars">{parseStars(reviewItem.rating)}</h2>
+                    <h4 className="review-date">Posted {parseDate(reviewItem.created_date)}</h4>
 
-                    <h3>{reviewItem.review_text}</h3>
-                </li>)}
+                    <h3 className="reviews-text">{reviewItem.review_text}</h3>
+                    </div>
+                    
+                )}
             </div>
         </div>
     )

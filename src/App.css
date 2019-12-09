@@ -92,22 +92,22 @@
 }
 
 .review-submit {
-  font-family: 'Song Myung';
+  font-family: 'Open Sans';
   text-align: center;
 }
 
 .is_accurate {
-  font-family: 'Song Myung';
+  font-family: 'Open Sans';
   text-align: center;
 }
 
 .enter-a-review {
-  font-family: 'Song Myung';
+  font-family: 'Open Sans';
   text-align: center;
 }
 
 .rating {
-  font-family: 'Song Myung';
+  font-family: 'Open Sans';
   text-align: center;
 }
 
@@ -117,13 +117,44 @@
 }
 
 .main {
-  font-family: 'Song Myung';
+  font-family: 'Open Sans';
   text-align: center;
 }
 
 .secondary {
-  font-family: 'Song Myung';
+  font-family: 'Open Sans';
   text-align: center;
   font-size: 20px;
 }
 
+.list-group-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.reviews {
+  border: 5px solid #522398;
+  font-size: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.reviews-stars {
+  padding: 0px, 0px, 0px, 0px;
+}
+
+.reviews-date {
+  padding: 0px, 0px, 0px, 0px;
+}
+
+.reviews-text {
+  padding: 0px, 0px, 0px, 0px;
+}
