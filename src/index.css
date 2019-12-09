@@ -1,11 +1,11 @@
 body {
   margin: 0;
-  font-family: 'Song Myung', cursive;
+  font-family: 'Open Sans';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: 'Song Myung';
+  font-family: 'Open Sans';
 }
 
