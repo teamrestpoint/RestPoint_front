@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 
 const Map = (props) => {
-  const timeout = 15000
+  const timeout = 7000
   const { userLocation, restrooms } = props
   const [didUpdate, setDidUpdate] = useState(false)
 
